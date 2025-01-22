@@ -1,0 +1,26 @@
+<ul id="cssoft-popup-messages" style="display: none">
+<?php foreach ($this->getData('popup_messenger')->getPopups(true) as $id => $message) : ?>
+    <li id="cssoft-popup-<?php echo $id ?>">
+        <div class="cssoft__popup-title"><?php echo $this->escapeHtml($message['title']) ?></div>
+        <div class="cssoft__popup-text">
+            <pre><?php echo $this->escapeHtml($message['text']) ?></pre>
+        </div>
+    </li>
+<?php endforeach; ?>
+</ul>
+
+<script type="text/javascript">
+require([
+    'jquery',
+    'Magento_Ui/js/modal/alert'
+], function ($, alert) {
+    $('.cssoft__action-info-message').on('click', function(e) {
+        e.preventDefault();
+        var context = '#cssoft-popup-' + $(this).attr('data-target');
+        alert({
+            title: $('.cssoft__popup-title', context).html(),
+            content: $('.cssoft__popup-text', context).html()
+        });
+    });
+});
+</script>

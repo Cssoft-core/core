@@ -1,0 +1,30 @@
+{
+    "name": "cssoft/core",
+    "description": "CSSoft core module. Its purpose is to add CSSoft menu and config entries",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "OSL-3.0",
+
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "CSSoft\\Core\\": ""
+        }
+    },
+
+    "authors": [
+        {
+            "name": "CSSoft Team",
+            "email": "support@cssoft.com"
+        }
+    ],
+
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+
+    "extra": {
+        "magento2-plugin": true
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="CSSoft_Core::cssoft"
+            title="CSSoft"
+            module="CSSoft_Core"
+            sortOrder="55"
+            resource="CSSoft_Core::cssoft"
+        />
+        <add id="CSSoft_Core::general"
+            title="General"
+            module="CSSoft_Core"
+            sortOrder="5"
+            parent="CSSoft_Core::cssoft"
+            resource="CSSoft_Core::general"
+        />
+    </menu>
+</config>

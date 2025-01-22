@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_action_predispatch">
+        <observer name="cssoft_notification" instance="CSSoft\Core\Observer\Backend\FetchNotifications" />
+    </event>
+    <event name="layout_generate_blocks_after">
+        <observer name="cssoft_add_popup_messages" instance="CSSoft\Core\Observer\Backend\AddPopupMessages" />
+    </event>
+    <event name="controller_action_predispatch_cssoft_installer_index">
+        <observer name="cssoft_cleanup_modules" instance="CSSoft\Core\Observer\Backend\RemoveOldModules" />
+    </event>
+    <event name="cssoft_core_module_collection_load_before">
+        <observer name="cssoft_load_components" instance="CSSoft\Core\Observer\Backend\LoadComponents" />
+    </event>
+    <event name="cssoft_core_module_collection_load_after">
+        <observer name="cssoft_add_components_data" instance="CSSoft\Core\Observer\Backend\AddComponentsData" />
+    </event>
+</config>
